@@ -31,6 +31,55 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 }
+
+body {
+	background-color: #b4b4b4;
+	color: #2c2c2c;
+	font:  100% "Trebuchet MS",Verdana,sans-serif;
+	padding-bottom: 20px;
+}
+
+h1, h2, h3, h4, h5, .logo {
+	color:#3a3939;
+	font-weight: bold;
+
+}
+h1 {
+	font-size: 2.0em;
+	margin-bottom: 0.75em;
+	text-transform: lowercase;
+}
+h2 {
+	font-size: 1.2em;
+	text-transform: lowercase;
+
+}
+p {
+    margin: 0 0 0.5em;
+    padding-right: 0;
+}
+a {
+    padding: 0.2em;
+}
+a:link {
+    color: #AF3A11;
+    text-decoration: none;
+}
+a:visited {
+    color: #AF3A11;
+    text-decoration: none;
+}
+a:focus, a:hover, a:active {
+    background: none repeat scroll 0 0 #4f4c49;
+    text-decoration: underline;
+}
+a.current:hover {
+    text-decoration: none;
+}
+a.current:hover {
+    cursor: default;
+    text-decoration: none;
+}
 ol, ul {
 	list-style: none;
 }
@@ -45,4 +94,79 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+}
+header {
+	background-color: #b4b4b4;
+	height: 40px;
+	
+}
+.logo {
+    float: left;
+    font-size: 1.75em;
+    margin: 0;
+}
+.logo a {
+    color: #000000;
+    padding: 0 0 0 0.2em;
+}
+.logo a:hover {
+    background: none repeat scroll 0 0 transparent;
+    color: #AF3A11;
+    text-decoration: none;
+}
+.logo span {
+    color: #1D3D76;
+    display: block;
+    font-size: 0.3em;
+    font-style: italic;
+    font-weight: normal;
+    margin: 3px 0 0 1em;
+}
+#bbt {
+	font-size: 0.5em;	
+	color: #dedede;
+	font-weight: normal;
+}
+#masthead div {
+	float:right;
+	padding: 1.2em .25em .25em 0;
+}
+.nav li {
+    float: left;
+    font-size: 0.6em;
+    padding: 0 25px 0 3px;
+}
+.nav li a {
+    font-size: 1.5em;
+}
+.nav li:first-child {
+    list-style: none outside none;
+    padding-left: 0;
+}
+.nav li:last-child {
+    padding-right: 0;
+}
+#container {
+    
+    margin: 20px auto;
+    max-width: 1200px;
+    padding: 30px 0 0 0;
+    width: 90%;
+}
+#page {
+    background: none repeat scroll 0 0 #FFFFFF;
+    max-width: 1100px;
+    padding: 0px 0px 0px 0px;
+    width: 100%;
+}
+#main {
+    background-color: #ffd8d8;
+    float: right;
+    width: 30%;
+    margin: .2em .2em .2em .2em;
+}
+#related {
+    background-color: #f4f4f4;
+    margin-left: 31%;
+    padding: 10px 10px 10px 10px;
 }
