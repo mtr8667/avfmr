@@ -51,12 +51,28 @@ h1 {
 }
 h2 {
 	font-size: 1.2em;
+	margin-bottom: 0.5em;
 	text-transform: lowercase;
-
+}
+h3 {
+	color: #424242;
+	font-size: 1em;
+	margin-bottom: 0.5em;
+	text-transform: lowercase;
+	padding: 0 0 0 25px;
+}
+h4 {
+	color: #ececec;
+	font-size: 1em;
+	margin-bottom: 0.5em;
+	text-transform: lowercase;
+	padding: 0 0 0 25px;
 }
 p {
     margin: 0 0 0.5em;
-    padding-right: 0;
+    padding-right: 10px;
+    font-size: 0.8em;
+    color: #5e5e5e;
 }
 a {
     padding: 0.2em;
@@ -99,6 +115,10 @@ header {
 	background-color: #b4b4b4;
 	height: 40px;
 	
+}
+footer {
+	background-color: #b4b4b4;
+	height: 25px;
 }
 .logo {
     float: left;
@@ -146,6 +166,20 @@ header {
 .nav li:last-child {
     padding-right: 0;
 }
+.nav2 li a {
+    font-size: .8em;
+    padding: 0 25px 20px 30px;
+}
+#aside {
+	margin-bottom: 4px;
+}
+.overview {
+	padding: 25px 25px 25px 25px;
+}
+.about {
+	padding: 25px 25px 25px 25px;
+}
+
 #container {
     
     margin: 20px auto;
@@ -160,10 +194,10 @@ header {
     width: 100%;
 }
 #main {
-    background-color: #ffd8d8;
-    float: right;
+    float: left;
     width: 30%;
-    margin: .2em .2em .2em .2em;
+    padding: 10px 10px 10px 10px;
+
 }
 #related {
     background-color: #f4f4f4;
