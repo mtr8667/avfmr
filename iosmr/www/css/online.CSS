@@ -135,7 +135,7 @@ footer {
 }
 .logo a {
     color: #000000;
-    padding: 0 0 0 .2em;
+    padding: 0 0 0 0.2em;
 }
 .logo a:hover {
     background: none repeat scroll 0 0 transparent;
@@ -182,7 +182,7 @@ footer {
 
 #site {
 
-    width: 100%;
+    width: 93.75%;
 }
 .page {
     background: none repeat scroll 0 0 #FFFFFF;
@@ -201,43 +201,4 @@ footer {
     background-color: #f4f4f4;
     margin-left: 35.666667%;
     padding: 1.587302% 1.587302% 1.587302% 1.587302%;
-}
-@media screen and (max-width: 768px) {
-	#site {
-    	width: 100%;
-    }
-	#masthead div {
-	    float:right;
-	}
-	.related {
-    	background-color: #f4f4f4;
-    	margin-left: 0;
-    	float: left;
-    	width: 100%;    	
-    	padding: 1.587302% 1.587302% 1.587302% 1.587302%;
-    }
-    .main {
-    	background-color: #FFFFFF;
-    	float: left;
-    	width: 100%;
-    	padding: 1.587302% 1.587302% 1.587302% 1.587302%;
-	}
-	.nav2 li a {
-    	font-size: .8em;
-    	padding: 0 7.8125% 6.25% 9.375%;
-	}
-	.overview {
-		padding: .25% 3.125% 3.125% 3.125%;
-	}
-	.about {
-		font-style: italic;
-		padding: 7.8125% 7.8125% 7.8125% 7.8125%;
-	}
-	.nav li {
-      	font-size: 0.6em;
-  	}
-	.nav li a {
-	    font-size: 1.5em;
-	}
-
 }

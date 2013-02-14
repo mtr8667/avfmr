@@ -31,10 +31,13 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 }
-
-body {
+html {
+	
 	background-color: #b4b4b4;
-	color: #2c2c2c;
+
+}
+body {
+		color: #2c2c2c;
 	font:  100% "Trebuchet MS",Verdana,sans-serif;
 	padding-bottom: 20px;
 }
@@ -60,7 +63,7 @@ h3 {
 	margin-top: 0.5em;
 	margin-bottom: 0.5em;
 	text-transform: lowercase;
-	padding: 0 0 0 7.8125%;
+	padding: 0 0 0 25px;
 }
 h4 {
 	color: #4c4c4c;
@@ -118,15 +121,16 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+
 }
 header {
 	background-color: #b4b4b4;
-	height:2.4em;
+	height: 40px;
 	
 }
 footer {
 	background-color: #b4b4b4;
-	height: 1.4em;
+	height: 25px;
 }
 .logo {
     float: left;
@@ -135,12 +139,20 @@ footer {
 }
 .logo a {
     color: #000000;
-    padding: 0 0 0 .2em;
+    padding: 0 0 0 0.2em;
 }
 .logo a:hover {
     background: none repeat scroll 0 0 transparent;
     color: #AF3A11;
     text-decoration: none;
+}
+.logo span {
+    color: #1D3D76;
+    display: block;
+    font-size: 0.3em;
+    font-style: italic;
+    font-weight: normal;
+    margin: 3px 0 0 1em;
 }
 #bbt {
 	font-size: 0.5em;	
@@ -155,7 +167,7 @@ footer {
 .nav li {
     float: left;
     font-size: 0.6em;
-    padding: 0 3em 0 .25em;
+    padding: 0 25px 0 3px;
 }
 .nav li a {
     font-size: 1.5em;
@@ -169,75 +181,41 @@ footer {
 }
 .nav2 li a {
     font-size: .8em;
-    padding: 0 7.8125% 6.25% 9.375%;
+    padding: 0 25px 20px 30px;
 }
-
-.overview {
-	padding: 7.8125% 7.8125% 3.125% 7.8125%;
-}
-.about {
-	font-style: italic;
-	padding: 7.8125% 7.8125% 7.8125% 7.8125%;
-}
-
-#site {
-
-    width: 100%;
+#site
+ {
+    margin: 0;   
+  	width: 90%;/* 90% of 960px */
 }
 .page {
-    background: none repeat scroll 0 0 #FFFFFF;
-    width: 100%;
+    background-color: #ffffff;
+    margin: 0;
+    width: 93.75%; /* 900px / 960px */
 }
-.main {
+#left {
+    background-color: #ffffff;
     float: left;
-    width: 35.555556%;
+    width: 27.7777778%;
+    padding: 3.021148% 3.021148% 3.021148% 3.021148%;
+    margin: 0;
 
 }
-.related span {
+.right span {
 	color: #AF3A11;
 	font-size: 0.9em; 
 }
-.related {
+.right {
     background-color: #f4f4f4;
-    margin-left: 35.666667%;
-    padding: 1.587302% 1.587302% 1.587302% 1.587302%;
+    float: right;
+    width: 62.8888889%;
+    padding: 1.766784% 1.766784% 1.766784% 1.766784%;
+    margin: 0;
+    }
+.overview {
+	padding: 25px 15px 10px 25px;
 }
-@media screen and (max-width: 768px) {
-	#site {
-    	width: 100%;
-    }
-	#masthead div {
-	    float:right;
-	}
-	.related {
-    	background-color: #f4f4f4;
-    	margin-left: 0;
-    	float: left;
-    	width: 100%;    	
-    	padding: 1.587302% 1.587302% 1.587302% 1.587302%;
-    }
-    .main {
-    	background-color: #FFFFFF;
-    	float: left;
-    	width: 100%;
-    	padding: 1.587302% 1.587302% 1.587302% 1.587302%;
-	}
-	.nav2 li a {
-    	font-size: .8em;
-    	padding: 0 7.8125% 6.25% 9.375%;
-	}
-	.overview {
-		padding: .25% 3.125% 3.125% 3.125%;
-	}
-	.about {
-		font-style: italic;
-		padding: 7.8125% 7.8125% 7.8125% 7.8125%;
-	}
-	.nav li {
-      	font-size: 0.6em;
-  	}
-	.nav li a {
-	    font-size: 1.5em;
-	}
-
+.about {
+	font-style: italic;
+	padding: 25px 25px 25px 25px;
 }
