@@ -21,13 +21,14 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="format-detection" content="telephone=no" />
-        <meta name="viewport" content="user-scalable=no,  width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
         <link rel="stylesheet" type="text/css" href="css/index.css" />
+        
         <title>AVF demo app</title>
     </head>
     <body>
         <div id="site"><!-- site wrapper -->
-        	<div id="page"><!-- page wrapper -->
+        	<div class="page"><!-- page wrapper -->
         		<header id="masthead"><!-- masthead-->
         			<p class="logo">
 	        			<a href="/">responsive</a>
@@ -43,12 +44,12 @@
 	        			</nav>
         			</div>
         		</header>
-        		<section id="main">
+        		<section class="main">
         			<aside class="overview">
         			<h2>Welcome ...</h2>	
         					<p>to the responsive bbtmobi AVF Demo app! This is a prototype app that will attempt to meaningfully integrate phonegap native features and remote data API information with responsive web design content and techniques.</p>
         			</aside>
-        			<aside>
+        		
 	        			<nav>
 		        			<h3>native features</h3>
 			        		<ul class="nav2">
@@ -58,34 +59,44 @@
 				        		<li><a href="/">storage</a></li>
 				        		<li><a href="/">notification</a></li>
 			        		</ul>
-	        			</nav>
-        			</aside>
-        			<aside>
-	        			<nav>
+	        		
 		        			<h3>weekly</h3>
 			        		<ul class="nav2">
-				        		<li><a href="/">week one</a></li>
+				        		<li><a href="#week1">week one</a></li>
 				        		<li><a href="/">week two</a></li>
 				        		<li><a href="/">week three</a></li>
 				        		<li><a href="/">week four</a></li>
 			        		</ul>
-	        			</nav>
-        			</aside>
-	        		<aside>
-	        			<nav>
+	        		
 		        			<h3>the buzz</h3>
 			        		<ul class="nav2">
 				        		<li><a href="/">twitter</a></li>
-				        		<li><a href="/">mashable</a></li>
+				        		<li><a href="/">usa today</a></li>
 			        		</ul>
 	        			</nav>
-        			</aside>
+        			
         			<aside class="about">
         				
         					<p>matthew richter AVF 1302</p>
         			</aside>
         		</section>
-        		<article class="related"><!-- main content-->
+        		<section class="related" ><!-- main content-->
+	        		<article data-role="content" id="tweet">
+						<h2>check out the most recent chatter on Twitter regarding responsive design! </h2>
+		<p>After checking out this section for a few days or weeks you might find yourself following a few regulars who frequently opine on responsive design, enjoy!</p>
+						<ul id="datatweet" data-role="listview" data-filter="true">
+								<li id="data-tweet"></li>
+						</ul>
+					</article>
+					<article data-role="content" id="usa">
+						<h2>Check out the latest news from USA Today's Tech section!</h2>
+		<p>Mobile moves fast and it pays to keep your finger on the pulse on the industry and what's going on in all the various facets of Mobile.</p>
+						<ul id="datausa" data-role="listview" data-filter="true">
+							<li id="data-usa">Getting USA Today ...</li>
+						</ul>
+					</article>
+        		
+	        		<article id="week1">
 	        		<h2>week one: Data Research, Project Intent</h2>
 	        		<h4>1. How could Twitter be used with login and payment live data resources?</h4>
 			  
@@ -111,8 +122,35 @@
 		
 		<h4>5. Briefly describe some past lessons learned.</h4>
 		<p><small>Planning & organization is key with regard to development!  There are so many different components and parts to building a mobile app that anything less than a concentrated effort in these two areas could result in failure, leaving something out, missing a requirement or not being able to actually build the application.  So, while its a work in progress, I'm trying to develop a methodology/procedure to follow when developing a mobile app.  This includes breaking the project down by requirements and this means for Full Sail classes looking at all the weeks requirements in the beginning so you can see the big picture and plan accordingly.  I have also been trying to break things down by technology, framework, programming language etc. in order to help keep things in the in the right department so to speak.  This also helps with trouble shooting. This time around I have used moqups.com and mindjet.com to assist me. Time management is also key getting hung up on a bug with an open source install is common place if you don't divide your work accordingly and get hung up on a bug too long you very well might run out of time. Lastly I'm learning to immediately go to the web when I believe I'm in bug land to attempt to research a solution in an effort to save the most precious of all commodities time.</small></p>
+				</article>
+				<article id="week2">
+	        		<h2>week one: Data Research, Project Intent</h2>
+	        		<h4>1. How could Twitter be used with login and payment live data resources?</h4>
+			  
+		<p><small>Twitter actually has a sign in with Twitter feature that can be implemented if a user has access to a browser or a web-connected mobile device. Due to the popularity of Twitter and its recognizable brand any website or mobile web app could integrate the sign in with Twitter functionality to allow their users to very easily register on their websites or mobile apps. Similarly your Twitter account information could be used to purchase items/products as proposed by paycento. Please see the reference links below.</small></p> 
+		<p><a href="https://dev.twitter.com/docs/auth/sign-twitter/"><span>twitter reference</span></a></p>
+		<p><a href="http://www.huffingtonpost.com/2012/04/02/paycento-facebook-twitter-online-payment_n_1396678.html/"><span>paycento reference</span></a></p>
+		
+		<h4>2. Why JSON-P?</h4>
+		<p><small> JSON-P (JSON with Padding) let's us get around the same origin policy providing cross-domain access to an existing JSON API, by wrapping a JSON payload (object) in a function call. Please see reference link below.</small></p>
+		
+		<p><a href="http://en.wikipedia.org/wiki/JSONP/"><span>wikipedia JSONP</span></a></p>     
+		
+		
+		
+		<h4>3. Which JSON-P data resources might pair well with the various native features.</h4>
+		<p><small>My current AVF project concept is to aggregate, organize and summarize responsive design practices and techniques. Initially mashing the native feature of connection and device with customizing content and paving the way to access data APIs relative to responsive design would be obvious first choices.  While obvious and probably the most simple implementations of native features connection and device appear to be a great place to start and very valuable for any app. Utilizing various social networks like twitter and Facebook along with youtube APIs would also be great places to start pulling in relevant chatter, information, videos and current posts on responsive design.  This information could then be mashed in any number of ways.  Articles of interest could access the storage native feature to save favorites.  These favorites could also be stored temporally while the local contact database is accessed facilitating emailing an important piece of aggregated responsive news to a friend or client.  Finally you could use the notification native feature with the data that you have pulled to notify friends, users ,clients etc.. that a specific piece of news has arrived.
 
-        		</article>
+		</small></p>
+		  
+		<h4>4. Please describe design and functionality intentions for your AVF demo app.</h4>
+		<p><small>Similar to the mashup ideas I stated in my answer to question 3 I would like to integrate Twitter feeds searched by responsive design keywords (fluid text, fluid design , fluid grids etc...) into a stored list that can be referenced, shared and appended to.  I would also like to integrate relevant responsive news into the app via the storage and alert native features.  With regard to design I want to fully implement a responsive design that will automatically respond to mobile, tablet and desktop contextual environments.  I’ll prioritize the content by viewport and gradually move from two columns with a header and footer to one column on a mobile device.  Content will also be prioritized re-ordered and re-organized based on viewport and contextual relevance. . I will also try to keep usability in mind utilizing alerts as well as integration with social media even if its just links when appropriate in the app.
+</small></p>     
+		
+		<h4>5. Briefly describe some past lessons learned.</h4>
+		<p><small>Planning & organization is key with regard to development!  There are so many different components and parts to building a mobile app that anything less than a concentrated effort in these two areas could result in failure, leaving something out, missing a requirement or not being able to actually build the application.  So, while its a work in progress, I'm trying to develop a methodology/procedure to follow when developing a mobile app.  This includes breaking the project down by requirements and this means for Full Sail classes looking at all the weeks requirements in the beginning so you can see the big picture and plan accordingly.  I have also been trying to break things down by technology, framework, programming language etc. in order to help keep things in the in the right department so to speak.  This also helps with trouble shooting. This time around I have used moqups.com and mindjet.com to assist me. Time management is also key getting hung up on a bug with an open source install is common place if you don't divide your work accordingly and get hung up on a bug too long you very well might run out of time. Lastly I'm learning to immediately go to the web when I believe I'm in bug land to attempt to research a solution in an effort to save the most precious of all commodities time.</small></p>
+				</article>
+        		</section>
         		<footer>
         		</footer>
         		
@@ -120,6 +158,7 @@
         </div><!-- close site wrapper-->
         		
         <script type="text/javascript" src="cordova-2.3.0.js"></script>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             app.initialize();

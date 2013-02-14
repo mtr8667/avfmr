@@ -60,7 +60,7 @@ h3 {
 	margin-top: 0.5em;
 	margin-bottom: 0.5em;
 	text-transform: lowercase;
-	padding: 0 0 0 25px;
+	padding: 0 0 0 7.8125%;
 }
 h4 {
 	color: #4c4c4c;
@@ -121,12 +121,12 @@ table {
 }
 header {
 	background-color: #b4b4b4;
-	height: 40px;
+	height:2.4em;
 	
 }
 footer {
 	background-color: #b4b4b4;
-	height: 25px;
+	height: 1.4em;
 }
 .logo {
     float: left;
@@ -135,26 +135,18 @@ footer {
 }
 .logo a {
     color: #000000;
-    padding: 0 0 0 0.2em;
+    padding: 0 0 0 .2em;
 }
 .logo a:hover {
     background: none repeat scroll 0 0 transparent;
     color: #AF3A11;
     text-decoration: none;
 }
-.logo span {
-    color: #1D3D76;
-    display: block;
-    font-size: 0.3em;
-    font-style: italic;
-    font-weight: normal;
-    margin: 3px 0 0 1em;
-}
 #bbt {
 	font-size: 0.5em;	
 	color: #dedede;
 	font-weight: normal;
-
+	
 }
 #masthead div {
 	float:right;
@@ -163,7 +155,7 @@ footer {
 .nav li {
     float: left;
     font-size: 0.6em;
-    padding: 0 25px 0 3px;
+    padding: 0 3em 0 .25em;
 }
 .nav li a {
     font-size: 1.5em;
@@ -177,36 +169,28 @@ footer {
 }
 .nav2 li a {
     font-size: .8em;
-    padding: 0 25px 20px 30px;
+    padding: 0 7.8125% 6.25% 9.375%;
 }
-#aside {
-	margin-bottom: 4px;
-}
+
 .overview {
-	padding: 25px 25px 10px 25px;
+	padding: 7.8125% 7.8125% 3.125% 7.8125%;
 }
 .about {
 	font-style: italic;
-	padding: 25px 25px 25px 25px;
+	padding: 7.8125% 7.8125% 7.8125% 7.8125%;
 }
 
-#container {
-    
-    margin: 20px auto;
-    max-width: 1200px;
-    padding: 30px 0 0 0;
-    width: 90%;
-}
-#page {
-    background: none repeat scroll 0 0 #FFFFFF;
-    max-width: 1100px;
-    padding: 0px 0px 0px 0px;
+#site {
+
     width: 100%;
 }
-#main {
+.page {
+    background: none repeat scroll 0 0 #FFFFFF;
+    width: 100%;
+}
+.main {
     float: left;
-    width: 30%;
-    padding: 10px 10px 10px 10px;
+    width: 35.555556%;
 
 }
 .related span {
@@ -215,6 +199,45 @@ footer {
 }
 .related {
     background-color: #f4f4f4;
-    margin-left: 31%;
-    padding: 10px 10px 10px 10px;
+    margin-left: 35.666667%;
+    padding: 1.587302% 1.587302% 1.587302% 1.587302%;
+}
+@media screen and (max-width: 768px) {
+	#site {
+    	width: 100%;
+    }
+	#masthead div {
+	    float:right;
+	}
+	.related {
+    	background-color: #f4f4f4;
+    	margin-left: 0;
+    	float: left;
+    	width: 100%;    	
+    	padding: 1.587302% 1.587302% 1.587302% 1.587302%;
+    }
+    .main {
+    	background-color: #FFFFFF;
+    	float: left;
+    	width: 100%;
+    	padding: 1.587302% 1.587302% 1.587302% 1.587302%;
+	}
+	.nav2 li a {
+    	font-size: .8em;
+    	padding: 0 7.8125% 6.25% 9.375%;
+	}
+	.overview {
+		padding: .25% 3.125% 3.125% 3.125%;
+	}
+	.about {
+		font-style: italic;
+		padding: 7.8125% 7.8125% 7.8125% 7.8125%;
+	}
+	.nav li {
+      	font-size: 0.6em;
+  	}
+	.nav li a {
+	    font-size: 1.5em;
+	}
+
 }
