@@ -25,18 +25,18 @@ var app = {
     //
     // Bind any events that are required on startup. Common events are:
     // 'load', 'deviceready', 'offline', and 'online'.
-    bindEvents: function() {
+    bindEvents: function () {
         document.addEventListener('deviceready', this.onDeviceReady, false);
     },
     // deviceready Event Handler
     //
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicity call 'app.receivedEvent(...);'
-    onDeviceReady: function() {
+    onDeviceReady: function () {
         app.receivedEvent('deviceready');
     },
     // Update DOM on a Received Event
-    receivedEvent: function(id) {
+    receivedEvent: function (id) {
         var parentElement = document.getElementById(id);
         var listeningElement = parentElement.querySelector('.listening');
         var receivedElement = parentElement.querySelector('.received');
@@ -47,9 +47,10 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
+
 $(function() {
 	$.getJSON("http://search.twitter.com/search.json?q=responsive%20design&rpp=10&include_entities=true&result_type=mixed&callback=?",
-	function(data) {
+	function (data) {
 		console.log(data);
 		$("#data-tweet").html("<p>Current Data Retrieved!</p>");
 		for (i=0, j=data.results.length; i<j; i++) {
@@ -62,6 +63,7 @@ $(function() {
 		}
 	});
 });
+
 $(function() {
 	$.getJSON("http://api.usatoday.com/open/articles/topnews/tech?count=10&days=6&page=1&encoding=json&api_key=75rfk6x5m993y7qbcbyrdyvj",
 	function(data) {
