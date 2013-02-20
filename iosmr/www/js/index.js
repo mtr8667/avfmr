@@ -16,6 +16,8 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
+
 var app = {
     // Application Constructor
     initialize: function () {
@@ -25,18 +27,18 @@ var app = {
     //
     // Bind any events that are required on startup. Common events are:
     // 'load', 'deviceready', 'offline', and 'online'.
-    bindEvents: function () {
+    bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
     },
     // deviceready Event Handler
     //
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicity call 'app.receivedEvent(...);'
-    onDeviceReady: function () {
+    onDeviceReady: function() {
         app.receivedEvent('deviceready');
     },
     // Update DOM on a Received Event
-    receivedEvent: function (id) {
+    receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
         var listeningElement = parentElement.querySelector('.listening');
         var receivedElement = parentElement.querySelector('.received');
@@ -47,7 +49,25 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
+$(window).load(function(){
+  
+    getArticles('week1');
+    
+});
 
+function getArticles(id) {
+	var articles = $("article");
+	
+	for (i = 0; i < articles.length; i++) {
+		var art = articles[i];
+		if (id == art.id) {
+			art.style.display = "inherit";
+		} else {
+			art.style.display = "none";
+		}
+	}
+	return(false);
+}	
 $(function() {
 	$.getJSON("http://search.twitter.com/search.json?q=responsive%20design&rpp=10&include_entities=true&result_type=mixed&callback=?",
 	function (data) {
@@ -79,3 +99,4 @@ $(function() {
 		}
 	});
 });
+

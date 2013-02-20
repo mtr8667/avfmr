@@ -17,11 +17,10 @@
     specific language governing permissions and limitations
     under the License.
 -->
-<html lang="en">
+<html>
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <meta name="format-detection" content="telephone=no" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="format-detection" content="telephone=no"/>
         <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         
@@ -52,53 +51,70 @@
         			</aside>
         		
 	        			<nav>
-		        			<h3>native features</h3>
-			        		<ul class="nav2">
-				        		<li><a href="/">device</a></li>
-				        		<li><a href="/">connection</a></li>
-				        		<li><a href="/">contacts</a></li>
-				        		<li><a href="/">storage</a></li>
-				        		<li><a href="/">notification</a></li>
-			        		</ul>
-	        		
-		        			<h3>weekly</h3>
-			        		<ul class="nav2">
-				        		<li><a href="#week1">week one</a></li>
-				        		<li><a href="/">week two</a></li>
-				        		<li><a href="/">week three</a></li>
-				        		<li><a href="/">week four</a></li>
-			        		</ul>
-	        		
-		        			<h3>the buzz</h3>
-			        		<ul class="nav2">
-				        		<li><a href="/">twitter</a></li>
-				        		<li><a href="/">usa today</a></li>
-			        		</ul>
-	        			</nav>
-        			
+							<h3>native features</h3>
+							<ul class="nav2">
+								<li><a href="" onClick="return(getArticles('device'));">device</a></li>
+								<li><a href="" onClick="return(getArticles('connection'));">connection</a></li>
+								<li><a href="" onClick="return(getArticles('contacts'));">contacts</a></li>
+								<li><a href="" onClick="return(getArticles('storage'));">storage</a></li>
+								<li><a href="" onClick="return(getArticles('notification'));">notification</a></li>
+							</ul>
+							
+							<h3>weekly</h3>
+							<ul class="nav2">
+								<li><a href="" onClick="return(getArticles('week1'));">week one</a></li>
+								<li><a href="" onClick="return(getArticles('week2'));">week two</a></li>
+								<li><a href="" onClick="return(getArticles('week3'));">week three</a></li>
+							</ul>
+							
+							<h3>the buzz</h3>
+							<ul class="nav2">
+								<li><a href="" onClick="return(getArticles('tweet'));">twitter</a></li>
+								<li><a href="" onClick="return(getArticles('usatoday'));">usatoday</a></li>
+							</ul>
+						</nav>        			
         			<aside class="about">
         				
         					<p>matthew richter AVF 1302</p>
         			</aside>
         		</section>
         		<section class="related" ><!-- main content-->
-	        		<article data-role="content" id="tweet">
+	        		<article id="overview">
+		        		<h2>Overview of responsive design</h2>
+					</article>
+					<article id="device">
+		        		<h2>device</h2>
+					</article>
+					<article id="connection">
+		        		<h2>connection</h2>
+					</article>
+					<article id="contacts">
+		        		<h2>contacts</h2>
+					</article>
+					<article id="storage">
+		        		<h2>storage</h2>
+					</article>
+					<article id="notification">
+		        		<h2>notification</h2>
+					</article>
+					
+	        		<article  id="tweet">
 						<h2>check out the most recent chatter on Twitter regarding responsive design! </h2>
 		<p>After checking out this section for a few days or weeks you might find yourself following a few regulars who frequently opine on responsive design, enjoy!</p>
-						<ul id="datatweet" data-role="listview" data-filter="true">
+						<ul id="datatweet" data-role="listview">
 								<li id="data-tweet"></li>
 						</ul>
 					</article>
-					<article data-role="content" id="usa">
+					<article id="usatoday">
 						<h2>Check out the latest news from USA Today's Tech section!</h2>
 		<p>Mobile moves fast and it pays to keep your finger on the pulse on the industry and what's going on in all the various facets of Mobile.</p>
-						<ul id="datausa" data-role="listview" data-filter="true">
+						<ul id="datausa" data-role="listview">
 							<li id="data-usa">Getting USA Today ...</li>
 						</ul>
 					</article>
         		
 	        		<article id="week1">
-	        		<h2>week one: Data Research, Project Intent</h2>
+	        		<h2>week one: discussion, project intent</h2>
 	        		<h4>1. How could Twitter be used with login and payment live data resources?</h4>
 			  
 		<p><small>Twitter actually has a sign in with Twitter feature that can be implemented if a user has access to a browser or a web-connected mobile device. Due to the popularity of Twitter and its recognizable brand any website or mobile web app could integrate the sign in with Twitter functionality to allow their users to very easily register on their websites or mobile apps. Similarly your Twitter account information could be used to purchase items/products as proposed by paycento. Please see the reference links below.</small></p> 
@@ -125,7 +141,7 @@
 		<p><small>Planning & organization is key with regard to development!  There are so many different components and parts to building a mobile app that anything less than a concentrated effort in these two areas could result in failure, leaving something out, missing a requirement or not being able to actually build the application.  So, while its a work in progress, I'm trying to develop a methodology/procedure to follow when developing a mobile app.  This includes breaking the project down by requirements and this means for Full Sail classes looking at all the weeks requirements in the beginning so you can see the big picture and plan accordingly.  I have also been trying to break things down by technology, framework, programming language etc. in order to help keep things in the in the right department so to speak.  This also helps with trouble shooting. This time around I have used moqups.com and mindjet.com to assist me. Time management is also key getting hung up on a bug with an open source install is common place if you don't divide your work accordingly and get hung up on a bug too long you very well might run out of time. Lastly I'm learning to immediately go to the web when I believe I'm in bug land to attempt to research a solution in an effort to save the most precious of all commodities time.</small></p>
 				</article>
 				<article id="week2">
-	        		<h2>week two: Data Research, Accessibility</h2>
+	        		<h2>week two: discussion, accessibility</h2>
 	        		<h4>1. What are some of the ways that you could change your HTML in your Demo App to be more accessible?</h4>
 			  
 		<p><small>Don’t include Flash for starters or strip it out, screen readers have a problem with Flash video. Use HTML5 video for native controls, captions, descriptions, audio descriptions and sign language video. Make sure that all images and video have good descriptions associated with them by utilizing the “alt” attribute, most browsers will display or read this attribute if there is a problem displaying the image.  Make sure that your fonts are resizable/relative thus allowing the viewer to change the font size through the browser.  Also use semantic HTML tags. These tags are much more descriptive than div tags so when screen readers read your semantic HMTL much more information and understanding is relayed. You could also take advantage of HTML5’s markup for captioning (webVTT), descriptions and subtitles when using video. Finally keep the presentation and functionality layers separate.
@@ -158,6 +174,9 @@ The website that I used for much of this information literally had hundreds of t
 		
 		
 				</article>
+				<article id="week3">
+<h4>week three: discussion, industry research</h4>
+				</article>
         		</section>
         		<footer>
         		</footer>
@@ -168,7 +187,7 @@ The website that I used for much of this information literally had hundreds of t
         <script type="text/javascript" src="cordova-2.3.0.js"></script>
         <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
+       <script type="text/javascript">
             app.initialize();
         </script>
     </body>
