@@ -18,31 +18,16 @@
  */
 //<plugin name="Device" value="CDVDevice" />
 
-var deviceName = device.name;
-var deviceCordova = device.Cordova;
-var devicePlatform = device.platform;
-var deviceUUID = device.uuid;
-var deviceModel = device.model;
-var deviceVersion = device.version;
+
 
 
 document.addEventListener("deviceready", onDeviceReady, false);	
 
-/*
-function onDeviceReady() {
-        var element = document.getElementById('deviceProperties');
 
-        element.innerHTML = 'Device Name: '     + device.name     + '<br />' + 
-                            'Version Cordova: '  + device.cordova + '<br />' + 
-                            'Device Platform: ' + device.platform + '<br />' + 
-                            'Device UUID: '     + device.uuid     + '<br />' + 
-                            'Device Model: '    + device.model     + '<br />' + 
-                            'Device Version: '  + device.version  + '<br />';
-}
-*/
+
 function onDeviceReady() {
         checkConnection();
-        
+        checkDevice(); 
     }
 
 function checkConnection() {
@@ -59,17 +44,17 @@ function checkConnection() {
 
         alert('Connection type: ' + states[networkState]);
     }
-function checkDevice() {
+var checkDevice = function() {
 		
 		
-	$("#device").html("<h2>device information</h2>")
+	$("#deviceType").html("<h2>device information</h2>")
 			.append("<p>" +		
-							
-                            'Device Cordova: '  + device.cordova + '<br />' + 
-                            'Device Platform: ' + device.platform + '<br />' + 
-                            'Device UUID: '     + device.uuid     + '<br />' + 
-                            'Device Model: '    + device.model     + '<br />' + 
-                            'Device Version: '  + device.version  + '<br />' + 
+		                      'Device Name: '  + device.name + '<br />' + 
+		                      'Device Cordova: '  + device.cordova + '<br />' + 
+  	                          'Device Platform: ' + device.platform + '<br />' + 
+  	                          'Device UUID: '     + device.uuid     + '<br />' + 
+  	                          'Device Model: '    + device.model     + '<br />' + 
+  	                          'Device Version: '  + device.version  + '<br />' + 
                             "</P>");
                            
 }
@@ -78,7 +63,7 @@ function checkDevice() {
 //onload function calling getArticles() passing in "week1" as the current article to be displayed 
 $(window).load(function(){
     getArticles('week1');
-    checkDevice();
+    
 });
 
 // ajax call to get twitter api info and populate the twitter article in the app
@@ -129,6 +114,13 @@ var getArticles = function(id) {
 	}
 	return(false);
 }
-
+var video = document.getElementById("movie");
+  video.onclick = function() {
+    if (video.paused) {
+      video.play();
+    } else {
+      video.pause();
+    }
+};
 	
 //$("#apiTwitter").click(getArticles("tweet"));
