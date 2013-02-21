@@ -16,58 +16,72 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+//<plugin name="Device" value="CDVDevice" />
+
+var deviceName = device.name;
+var deviceCordova = device.Cordova;
+var devicePlatform = device.platform;
+var deviceUUID = device.uuid;
+var deviceModel = device.model;
+var deviceVersion = device.version;
 
 
-var app = {
-    // Application Constructor
-    initialize: function () {
-        this.bindEvents();
-    },
-    // Bind Event Listeners
-    //
-    // Bind any events that are required on startup. Common events are:
-    // 'load', 'deviceready', 'offline', and 'online'.
-    bindEvents: function() {
-        document.addEventListener('deviceready', this.onDeviceReady, false);
-    },
-    // deviceready Event Handler
-    //
-    // The scope of 'this' is the event. In order to call the 'receivedEvent'
-    // function, we must explicity call 'app.receivedEvent(...);'
-    onDeviceReady: function() {
-        app.receivedEvent('deviceready');
-    },
-    // Update DOM on a Received Event
-    receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
+document.addEventListener("deviceready", onDeviceReady, false);	
 
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
+/*
+function onDeviceReady() {
+        var element = document.getElementById('deviceProperties');
 
-        console.log('Received Event: ' + id);
+        element.innerHTML = 'Device Name: '     + device.name     + '<br />' + 
+                            'Version Cordova: '  + device.cordova + '<br />' + 
+                            'Device Platform: ' + device.platform + '<br />' + 
+                            'Device UUID: '     + device.uuid     + '<br />' + 
+                            'Device Model: '    + device.model     + '<br />' + 
+                            'Device Version: '  + device.version  + '<br />';
+}
+*/
+function onDeviceReady() {
+        checkConnection();
+        
     }
-};
+
+function checkConnection() {
+        var networkState = navigator.connection.type;
+
+        var states = {};
+        states[Connection.UNKNOWN]  = 'Unknown connection';
+        states[Connection.ETHERNET] = 'Ethernet connection';
+        states[Connection.WIFI]     = 'WiFi connection';
+        states[Connection.CELL_2G]  = 'Cell 2G connection';
+        states[Connection.CELL_3G]  = 'Cell 3G connection';
+        states[Connection.CELL_4G]  = 'Cell 4G connection';
+        states[Connection.NONE]     = 'No network connection';
+
+        alert('Connection type: ' + states[networkState]);
+    }
+function checkDevice() {
+		
+		
+	$("#device").html("<h2>device information</h2>")
+			.append("<p>" +		
+							
+                            'Device Cordova: '  + device.cordova + '<br />' + 
+                            'Device Platform: ' + device.platform + '<br />' + 
+                            'Device UUID: '     + device.uuid     + '<br />' + 
+                            'Device Model: '    + device.model     + '<br />' + 
+                            'Device Version: '  + device.version  + '<br />' + 
+                            "</P>");
+                           
+}
+
+
+//onload function calling getArticles() passing in "week1" as the current article to be displayed 
 $(window).load(function(){
-  
     getArticles('week1');
-    
+    checkDevice();
 });
 
-function getArticles(id) {
-	var articles = $("article");
-	
-	for (i = 0; i < articles.length; i++) {
-		var art = articles[i];
-		if (id == art.id) {
-			art.style.display = "inherit";
-		} else {
-			art.style.display = "none";
-		}
-	}
-	return(false);
-}	
+// ajax call to get twitter api info and populate the twitter article in the app
 $(function() {
 	$.getJSON("http://search.twitter.com/search.json?q=responsive%20design&rpp=10&include_entities=true&result_type=mixed&callback=?",
 	function (data) {
@@ -83,7 +97,7 @@ $(function() {
 		}
 	});
 });
-
+// ajax call to get usa today api info and populate the twitter article in the app
 $(function() {
 	$.getJSON("http://api.usatoday.com/open/articles/topnews/tech?count=10&days=6&page=1&encoding=json&api_key=75rfk6x5m993y7qbcbyrdyvj",
 	function(data) {
@@ -100,3 +114,21 @@ $(function() {
 	});
 });
 
+
+// function to get all navigation articles and display the one retrieved while hiding the others
+var getArticles = function(id) {
+	var articles = $("article");
+	
+	for (i = 0; i < articles.length; i++) {
+		var art = articles[i];
+		if (id == art.id) {
+			art.style.display = "inherit";
+		} else {
+			art.style.display = "none";
+		}
+	}
+	return(false);
+}
+
+	
+//$("#apiTwitter").click(getArticles("tweet"));
