@@ -52,21 +52,17 @@
 	        			<source src="avf.ogv" type="video/ogg; codecs=theora,vorbis" />
 	        			<source src="avf.mp4" />
 	        		</video>
-
-
-
-
-
-        		<p>to the responsive bbtmobi AVF Demo app! This is a prototype app that will attempt to meaningfully integrate phonegap native features and remote data API information with responsive web design content and techniques.</p>
+        			
+        					<p>to the responsive bbtmobi AVF Demo app! This is a prototype app that will attempt to meaningfully integrate phonegap native features and remote data API information with responsive web design content and techniques.</p>
         			</aside>
         		
 	        			<nav>
 							<h3>native features</h3>
 							<ul class="nav2">
-								<li><a href="" onClick="return(getArticles('device'));">device</a></li>
-								<li><a href="" onClick="return(getArticles('connection'));">connection</a></li>
-								<li><a href="" onClick="return(getArticles('contacts'));">contacts</a></li>
-								<li><a href="" onClick="return(getArticles('storage'));">storage</a></li>
+								<li><a href="" onClick="return(getArticles('deviceType'));">device</a></li>
+								<li><a href="" onClick="return(getArticles('connect'));">connection</a></li>
+								<li><a href="" onClick="return(getArticles('compassDegree'));">compass</a></li>
+								<li><a href="" onClick="return(getArticles('geo'));">geolocation</a></li>
 								<li><a href="" onClick="return(getArticles('notification'));">notification</a></li>
 							</ul>
 							
@@ -92,18 +88,19 @@
 	        		<article id="overview">
 		        		<h2>Overview of responsive design</h2>
 					</article>
-					<article id="device">
+					<article id="deviceType">
 		        		
 		        		
 					</article>
-					<article id="connection">
+					<article id="connect">
 		        		<h2>connection</h2>
+		        		<button type="button" onclick="checkConnection()">click to check you current connection</button>
 					</article>
-					<article id="contacts">
-		        		<h2>contacts</h2>
+					<article id="compassDegree">
+		        		<h2>compass</h2>
 					</article>
-					<article id="storage">
-		        		<h2>storage</h2>
+					<article id="geo">
+		        		
 					</article>
 					<article id="notification">
 		        		<h2>notification</h2>
@@ -145,7 +142,7 @@
 		</small></p>
 		  
 		<h4>4. Please describe design and functionality intentions for your AVF demo app.</h4>
-		<p><small>Similar to the mashup ideas I stated in my answer to question 3 I would like to integrate Twitter feeds searched by responsive design keywords (fluid text, fluid design , fluid grids etc...) into a stored list that can be referenced, shared and appended to.  I would also like to integrate relevant responsive news into the app via the storage and alert native features.  With regard to design I want to fully implement a responsive design that will automatically respond to mobile, tablet and desktop contextual environments.  I’ll prioritize the content by viewport and gradually move from two columns with a header and footer to one column on a mobile device.  Content will also be prioritized re-ordered and re-organized based on viewport and contextual relevance. . I will also try to keep usability in mind utilizing alerts as well as integration with social media even if its just links when appropriate in the app.
+		<p><small>Similar to the mashup ideas I stated in my answer to question 3 I would like to integrate Twitter feeds searched by responsive design keywords (fluid text, fluid design , fluid grids etc...) into a stored list that can be referenced, shared and appended to.  I would also like to integrate relevant responsive news into the app via the storage and alert native features.  With regard to design I want to fully implement a responsive design that will automatically respond to mobile, tablet and desktop contextual environments.  I‚Äôll prioritize the content by viewport and gradually move from two columns with a header and footer to one column on a mobile device.  Content will also be prioritized re-ordered and re-organized based on viewport and contextual relevance. . I will also try to keep usability in mind utilizing alerts as well as integration with social media even if its just links when appropriate in the app.
 </small></p>     
 		
 		<h4>5. Briefly describe some past lessons learned.</h4>
@@ -155,12 +152,12 @@
 	        		<h2>week two: discussion, accessibility</h2>
 	        		<h4>1. What are some of the ways that you could change your HTML in your Demo App to be more accessible?</h4>
 			  
-		<p><small>Don’t include Flash for starters or strip it out, screen readers have a problem with Flash video. Use HTML5 video for native controls, captions, descriptions, audio descriptions and sign language video. Make sure that all images and video have good descriptions associated with them by utilizing the “alt” attribute, most browsers will display or read this attribute if there is a problem displaying the image.  Make sure that your fonts are resizable/relative thus allowing the viewer to change the font size through the browser.  Also use semantic HTML tags. These tags are much more descriptive than div tags so when screen readers read your semantic HMTL much more information and understanding is relayed. You could also take advantage of HTML5’s markup for captioning (webVTT), descriptions and subtitles when using video. Finally keep the presentation and functionality layers separate.
+		<p><small>Don‚Äôt include Flash for starters or strip it out, screen readers have a problem with Flash video. Use HTML5 video for native controls, captions, descriptions, audio descriptions and sign language video. Make sure that all images and video have good descriptions associated with them by utilizing the ‚Äúalt‚Äù attribute, most browsers will display or read this attribute if there is a problem displaying the image.  Make sure that your fonts are resizable/relative thus allowing the viewer to change the font size through the browser.  Also use semantic HTML tags. These tags are much more descriptive than div tags so when screen readers read your semantic HMTL much more information and understanding is relayed. You could also take advantage of HTML5‚Äôs markup for captioning (webVTT), descriptions and subtitles when using video. Finally keep the presentation and functionality layers separate.
 </small></p> 
 				
-		<h4>2. Visit a video service on the web and search for “Screen Reader Demo” and “Mobile Screen Reader”. What are some of the common frustrations that you see among the examples given? How could you fix and or use them?
+		<h4>2. Visit a video service on the web and search for ‚ÄúScreen Reader Demo‚Äù and ‚ÄúMobile Screen Reader‚Äù. What are some of the common frustrations that you see among the examples given? How could you fix and or use them?
 </h4>
-		<p><small> Generally the current price point of screen readers excludes and estimated 85% of the market, they’re expensive. Blind people can’t see the cursor and have to memorize keyboard commands. Traditional browsers aren’t much use to blind people due to the webpage being populated with images and graphics that are of no use to blind people so text browsers should be used to increase efficiency. Some of the other top frustrations of screen reader users are the page layout of the site causing confusion, poorly designed forms, misleading links, inaccessible PDFs or files, and screen reader crashes. Obviously designing a web environment keeping accessibility in mind is a good first step in easing these frustrations. By using semantic HTML websites through descriptive tag names can effectively convey a sites layout reducing confusion. Also using software to cleanup and check your code and assist in reducing frustrations by identifying missing “alt” attributes broken links and other problems with your websites code. 
+		<p><small> Generally the current price point of screen readers excludes and estimated 85% of the market, they‚Äôre expensive. Blind people can‚Äôt see the cursor and have to memorize keyboard commands. Traditional browsers aren‚Äôt much use to blind people due to the webpage being populated with images and graphics that are of no use to blind people so text browsers should be used to increase efficiency. Some of the other top frustrations of screen reader users are the page layout of the site causing confusion, poorly designed forms, misleading links, inaccessible PDFs or files, and screen reader crashes. Obviously designing a web environment keeping accessibility in mind is a good first step in easing these frustrations. By using semantic HTML websites through descriptive tag names can effectively convey a sites layout reducing confusion. Also using software to cleanup and check your code and assist in reducing frustrations by identifying missing ‚Äúalt‚Äù attributes broken links and other problems with your websites code. 
 </small></p>
 		
 		 

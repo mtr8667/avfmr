@@ -48,7 +48,7 @@
         			<aside class="overview">
         			<h2>Welcome ...</h2>
         			<video src="avf.mp4" type="video/mp4" width="320" height="240" controls poster="ACFdemo_poster.png"></video>
-    	
+        			
         					<p>to the responsive bbtmobi AVF Demo app! This is a prototype app that will attempt to meaningfully integrate phonegap native features and remote data API information with responsive web design content and techniques.</p>
         			</aside>
         		
@@ -56,9 +56,9 @@
 							<h3>native features</h3>
 							<ul class="nav2">
 								<li><a href="" onClick="return(getArticles('deviceType'));">device</a></li>
-								<li><a href="" onClick="return(getArticles('connection'));">connection</a></li>
-								<li><a href="" onClick="return(getArticles('contacts'));">contacts</a></li>
-								<li><a href="" onClick="return(getArticles('storage'));">storage</a></li>
+								<li><a href="" onClick="return(getArticles('connect'));">connection</a></li>
+								<li><a href="" onClick="return(getArticles('compassDegree'));">compass</a></li>
+								<li><a href="" onClick="return(getArticles('geo'));">geolocation</a></li>
 								<li><a href="" onClick="return(getArticles('notification'));">notification</a></li>
 							</ul>
 							
@@ -88,14 +88,15 @@
 		        		
 		        		
 					</article>
-					<article id="connection">
+					<article id="connect">
 		        		<h2>connection</h2>
+		        		<button type="button" onclick="checkConnection()">click to check you current connection</button>
 					</article>
-					<article id="contacts">
-		        		<h2>contacts</h2>
+					<article id="compassDegree">
+		        		<h2>compass</h2>
 					</article>
-					<article id="storage">
-		        		<h2>storage</h2>
+					<article id="geo">
+		        		
 					</article>
 					<article id="notification">
 		        		<h2>notification</h2>

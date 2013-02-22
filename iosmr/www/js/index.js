@@ -23,14 +23,33 @@
 
 document.addEventListener("deviceready", onDeviceReady, false);	
 
-
-
 function onDeviceReady() {
-        checkConnection();
-        checkDevice(); 
+        
+        checkDevice();
+        
+        navigator.geolocation.getCurrentPosition(onSuccess, onError); 
     }
 
-function checkConnection() {
+
+function onError(compassError) {
+	alert("Code: " + error.code + "/n" + "Message:" + error.message + "/n");
+}
+
+function onSuccess(position) {
+	$("#geo").html("<h2>geolocation information</h2>")
+		.append("<p>" +		
+		                      'Latitude: '  + position.coords.latitude + '<br />' + 
+		                      'Longitude: '  + position.coords.logitude + '<br />' + 
+  	                          'Altitude: ' + position.coords.altitude + '<br />' + 
+  	                          'Accuracy: '     + position.coords.accuracy     + '<br />' + 
+  	                          'Altitude Accuracy: '    + position.coords.alititudeAccuracy     + '<br />' + 
+  	                          'Heading: '  + position.coords.heading  + '<br />' + 
+  	                          'Speed: '  + position.coords.speed  + '<br />' +
+  	                          'Timestamp: '  + position.coords.timestamp  + '<br />' +
+                            "</P>");
+
+}
+var checkConnection = function() {
         var networkState = navigator.connection.type;
 
         var states = {};
@@ -45,8 +64,7 @@ function checkConnection() {
         alert('Connection type: ' + states[networkState]);
     }
 var checkDevice = function() {
-		
-		
+	
 	$("#deviceType").html("<h2>device information</h2>")
 			.append("<p>" +		
 		                      'Device Name: '  + device.name + '<br />' + 
