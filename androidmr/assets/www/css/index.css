@@ -201,6 +201,7 @@ footer {
     background-color: #f4f4f4;
     margin-left: 35.666667%;
     padding: 1.587302% 1.587302% 1.587302% 1.587302%;
+    height: 2000px;
 }
 @media screen and (max-width: 768px) {
 	#site {
