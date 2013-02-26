@@ -107,6 +107,12 @@ a.current:hover {
 ol, ul {
 	list-style: none;
 }
+.figure {
+	float: right;
+	margin-bottom: 0.5em;
+	margin-left: 2.5312424%;
+	width: 49.3626748%;
+}
 blockquote, q {
 	quotes: none;
 }
@@ -167,10 +173,17 @@ footer {
 .nav li:last-child {
     padding-right: 0;
 }
+.nav2 {
+    
+    border-bottom:1px px solid #424242; 
+
+}
 .nav2 li a {
     font-size: .8em;
     padding: 0 7.8125% 6.25% 9.375%;
 }
+
+
 
 .overview {
 	padding: 7.8125% 7.8125% 3.125% 7.8125%;
@@ -201,7 +214,10 @@ footer {
     background-color: #f4f4f4;
     margin-left: 35.666667%;
     padding: 1.587302% 1.587302% 1.587302% 1.587302%;
-    height: 2000px;
+    height: 2200px;
+}
+img, video {
+	max-width: 100%;
 }
 @media screen and (max-width: 768px) {
 	#site {
