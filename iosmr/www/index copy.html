@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Matthew Richter AVF 1302 February -->
+<!-- Matthew Richter AVF 1302 -->
 <!--
     Licensed to the Apache Software Foundation (ASF) under one
     or more contributor license agreements.  See the NOTICE file
@@ -35,18 +35,11 @@
 	        			<a href="">responsive</a>
 	        			<a id="bbt" href="">bbtmobi</a>
         			</p>
-        			<div>
-	        			<nav>
-		        			<ul class="nav">
-			        			<li id="geo-time"></li>
-		        			</ul>
-	        			</nav>
-        			</div>
         		</header>
         		<section class="main">
         			<aside class="overview">
         			<h2>Welcome ...</h2>
-        			
+        			<video src="avf.mp4" type="video/mp4" width="400" height="240" controls poster="ACFdemo_poster.png"></video>
         			
         					<p>to the responsive bbtmobi AVF Demo app! This is a prototype app that will attempt to meaningfully integrate phonegap native features and remote data API information with responsive web design content and techniques.</p>
         			</aside>
@@ -54,24 +47,24 @@
 	        			<nav>
 							<h3>native features</h3>
 							<ul class="nav2">
-								<li><a href="" id="dt">device</a></li>
-								<li><a href="" id="c">connection</a></li>
-								<li><a href="" id="cd">compass android</a></li>
-								<li><a href="" id="g">geolocation iOS</a></li>
-								<li><a href="" id="n">video integration</a></li>
+								<li><a href="" onClick="return(getArticles('deviceType'));">device</a></li>
+								<li><a href="" onClick="return(getArticles('connect'));">connection</a></li>
+								<li><a href="" onClick="return(getArticles('compassDegree'));">compass</a></li>
+								<li><a href="" onClick="return(getArticles('geo'));">geolocation</a></li>
+								<li><a href="" onClick="return(getArticles('notification'));">notification</a></li>
 							</ul>
 							
 							<h3>weekly</h3>
 							<ul class="nav2">
-								<li><a href="" id="wk1">week one</a></li>
-								<li><a href="" id="wk2">week two</a></li>
+								<li><a href="" onClick="return(getArticles('week1'));">week one</a></li>
+								<li><a href="" onClick="return(getArticles('week2'));">week two</a></li>
 								<li><a href="" id="wk3">week three</a></li>
 							</ul>
 							
 							<h3>the buzz</h3>
 							<ul class="nav2">
-								<li><a href="" id="tw">twitter</a></li>
-								<li><a href="" id="us">usatoday</a></li>
+								<li><a href="" onClick="return(getArticles('tweet'));">twitter</a></li>
+								<li><a href="" onClick="return(getArticles('usatoday'));">usatoday</a></li>
 							</ul>
 						</nav>        			
         			<aside class="about">
@@ -84,11 +77,7 @@
 		        		<h2>Overview of responsive design</h2>
 					</article>
 					<article class="hidden" id="deviceType">
-		        		<div id="deviceInfo">
-		        		</div>
-		        		<ul id="deviceusa" data-role="listview">
-								<li id="device-usa"></li>
-						</ul>
+		        		
 		        		
 					</article>
 					<article class="hidden" id="connect">
@@ -101,9 +90,8 @@
 					<article class="hidden" id="geo">
 		        		
 					</article>
-					<article class="hidden" id="video">
-		        		<h2>Video</h2>
-		        		<video src="avf.mp4" type="video/mp4" width="400" height="240" controls poster="ACFdemo_poster.png"></video>
+					<article class="hidden" id="notification">
+		        		<h2>notification</h2>
 					</article>
 					
 	        		<article  class="hidden" id="tweet">

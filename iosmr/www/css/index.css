@@ -1,4 +1,6 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* Matthew Ricther AVF 1302 February, 2013
+
+http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -103,6 +105,10 @@ a.current:hover {
 a.current:hover {
     cursor: default;
     text-decoration: none;
+}
+
+i {
+	font-style: inherit;
 }
 ol, ul {
 	list-style: none;
@@ -214,7 +220,7 @@ footer {
     background-color: #f4f4f4;
     margin-left: 35.666667%;
     padding: 1.587302% 1.587302% 1.587302% 1.587302%;
-    height: 2200px;
+    height: 3000px;
 }
 img, video {
 	max-width: 100%;

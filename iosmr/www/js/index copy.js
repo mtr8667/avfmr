@@ -34,10 +34,9 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
         
-        
+        checkDevice();
         navigator.geolocation.getCurrentPosition(onSuccess, onError); 
         getGeoTime();
-        checkDevice();
     }
 
 
@@ -103,6 +102,8 @@ var checkDevice = $(function(device) {
 		}
 	});
 });
+                          
+
 
 //$("#geo-time").html("<p>" + position.timestamp + "</p>");
 //function getGeoTime
