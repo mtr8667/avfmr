@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Matthew Richter AVF 1302 February -->
 <!--
     Licensed to the Apache Software Foundation (ASF) under one
     or more contributor license agreements.  See the NOTICE file
@@ -37,9 +38,7 @@
         			<div>
 	        			<nav>
 		        			<ul class="nav">
-			        			<li><a href="">native features</a></li>
-			        			<li><a href="">weekly</a></li>
-			        			<li><a href="">the buzz</a></li>
+			        			<li id="geo-time"></li>
 		        			</ul>
 	        			</nav>
         			</div>
@@ -47,11 +46,7 @@
         		<section class="main">
         			<aside class="overview">
         			<h2>Welcome ...</h2>
-        			<video id="movie" width="300" height="230" poster="ACFdemo_poster.png" preload controls>
-	        			<source src="avf.webm" type="video/webm; codecs=vp8,vorbis" />
-	        			<source src="avf.ogv" type="video/ogg; codecs=theora,vorbis" />
-	        			<source src="avf.mp4" />
-	        		</video>
+        			
         			
         					<p>to the responsive bbtmobi AVF Demo app! This is a prototype app that will attempt to meaningfully integrate phonegap native features and remote data API information with responsive web design content and techniques.</p>
         			</aside>
@@ -59,24 +54,24 @@
 	        			<nav>
 							<h3>native features</h3>
 							<ul class="nav2">
-								<li><a href="" onClick="return(getArticles('deviceType'));">device</a></li>
-								<li><a href="" onClick="return(getArticles('connect'));">connection</a></li>
-								<li><a href="" onClick="return(getArticles('compassDegree'));">compass</a></li>
-								<li><a href="" onClick="return(getArticles('geo'));">geolocation</a></li>
-								<li><a href="" onClick="return(getArticles('notification'));">notification</a></li>
+								<li><a href="" id="dt">device - iOS & android</a></li>
+								<li><a href="" id="c">connection - iOS & android</a></li>
+								<li><a href="" id="cd">compass - android</a></li>
+								<li><a href="" id="g">geolocation - iOS</a></li>
+								<li><a href="" id="n">video integration - iOS</a></li>
 							</ul>
 							
 							<h3>weekly</h3>
 							<ul class="nav2">
-								<li><a href="" onClick="return(getArticles('week1'));">week one</a></li>
-								<li><a href="" onClick="return(getArticles('week2'));">week two</a></li>
-								<li><a href="" onClick="return(getArticles('week3'));">week three</a></li>
+								<li><a href="" id="wk1">week one</a></li>
+								<li><a href="" id="wk2">week two</a></li>
+								<li><a href="" id="wk3">week three</a></li>
 							</ul>
 							
 							<h3>the buzz</h3>
 							<ul class="nav2">
-								<li><a href="" onClick="return(getArticles('tweet'));">twitter</a></li>
-								<li><a href="" onClick="return(getArticles('usatoday'));">usatoday</a></li>
+								<li><a href="" id="tw">twitter</a></li>
+								<li><a href="" id="us">usatoday</a></li>
 							</ul>
 						</nav>        			
         			<aside class="about">
@@ -85,35 +80,40 @@
         			</aside>
         		</section>
         		<section class="related" ><!-- main content-->
-	        		<article id="overview">
+	        		<article class="hidden" id="overview">
 		        		<h2>Overview of responsive design</h2>
 					</article>
-					<article id="deviceType">
-		        		
+					<article class="hidden" id="deviceType">
+		        		<div id="deviceInfo">
+		        		</div>
+		        		<ul id="deviceusa" data-role="listview">
+								<li id="device-usa"></li>
+						</ul>
 		        		
 					</article>
-					<article id="connect">
+					<article class="hidden" id="connect">
 		        		<h2>connection</h2>
 		        		<button type="button" onclick="checkConnection()">click to check you current connection</button>
 					</article>
-					<article id="compassDegree">
+					<article class="hidden" id="compassDegree">
 		        		<h2>compass</h2>
 					</article>
-					<article id="geo">
+					<article class="hidden" id="geo">
 		        		
 					</article>
-					<article id="notification">
-		        		<h2>notification</h2>
+					<article class="hidden" id="video">
+		        		<h2>Video</h2>
+		        		<video src="avf.mp4" type="video/mp4" width="560" height="336" controls="true" poster="ACFdemo_poster.png"></video>
 					</article>
 					
-	        		<article  id="tweet">
+	        		<article  class="hidden" id="tweet">
 						<h2>check out the most recent chatter on Twitter regarding responsive design! </h2>
 		<p>After checking out this section for a few days or weeks you might find yourself following a few regulars who frequently opine on responsive design, enjoy!</p>
 						<ul id="datatweet" data-role="listview">
 								<li id="data-tweet"></li>
 						</ul>
 					</article>
-					<article id="usatoday">
+					<article class="hidden" id="usatoday">
 						<h2>Check out the latest news from USA Today's Tech section!</h2>
 		<p>Mobile moves fast and it pays to keep your finger on the pulse on the industry and what's going on in all the various facets of Mobile.</p>
 						<ul id="datausa" data-role="listview">
@@ -121,7 +121,7 @@
 						</ul>
 					</article>
         		
-	        		<article id="week1">
+	        		<article class="hidden" id="week1">
 	        		<h2>week one: discussion, project intent</h2>
 	        		<h4>1. How could Twitter be used with login and payment live data resources?</h4>
 			  
@@ -142,22 +142,22 @@
 		</small></p>
 		  
 		<h4>4. Please describe design and functionality intentions for your AVF demo app.</h4>
-		<p><small>Similar to the mashup ideas I stated in my answer to question 3 I would like to integrate Twitter feeds searched by responsive design keywords (fluid text, fluid design , fluid grids etc...) into a stored list that can be referenced, shared and appended to.  I would also like to integrate relevant responsive news into the app via the storage and alert native features.  With regard to design I want to fully implement a responsive design that will automatically respond to mobile, tablet and desktop contextual environments.  I‚Äôll prioritize the content by viewport and gradually move from two columns with a header and footer to one column on a mobile device.  Content will also be prioritized re-ordered and re-organized based on viewport and contextual relevance. . I will also try to keep usability in mind utilizing alerts as well as integration with social media even if its just links when appropriate in the app.
+		<p><small>Similar to the mashup ideas I stated in my answer to question 3 I would like to integrate Twitter feeds searched by responsive design keywords (fluid text, fluid design , fluid grids etc...) into a stored list that can be referenced, shared and appended to.  I would also like to integrate relevant responsive news into the app via the storage and alert native features.  With regard to design I want to fully implement a responsive design that will automatically respond to mobile, tablet and desktop contextual environments.  I’ll prioritize the content by viewport and gradually move from two columns with a header and footer to one column on a mobile device.  Content will also be prioritized re-ordered and re-organized based on viewport and contextual relevance. . I will also try to keep usability in mind utilizing alerts as well as integration with social media even if its just links when appropriate in the app.
 </small></p>     
 		
 		<h4>5. Briefly describe some past lessons learned.</h4>
 		<p><small>Planning and organization is key with regard to development!  There are so many different components and parts to building a mobile app that anything less than a concentrated effort in these two areas could result in failure, leaving something out, missing a requirement or not being able to actually build the application.  So, while its a work in progress, I'm trying to develop a methodology/procedure to follow when developing a mobile app.  This includes breaking the project down by requirements and this means for Full Sail classes looking at all the weeks requirements in the beginning so you can see the big picture and plan accordingly.  I have also been trying to break things down by technology, framework, programming language etc. in order to help keep things in the in the right department so to speak.  This also helps with trouble shooting. This time around I have used moqups.com and mindjet.com to assist me. Time management is also key getting hung up on a bug with an open source install is common place if you don't divide your work accordingly and get hung up on a bug too long you very well might run out of time. Lastly I'm learning to immediately go to the web when I believe I'm in bug land to attempt to research a solution in an effort to save the most precious of all commodities time.</small></p>
 				</article>
-				<article id="week2">
+				<article class="hidden" id="week2">
 	        		<h2>week two: discussion, accessibility</h2>
 	        		<h4>1. What are some of the ways that you could change your HTML in your Demo App to be more accessible?</h4>
 			  
-		<p><small>Don‚Äôt include Flash for starters or strip it out, screen readers have a problem with Flash video. Use HTML5 video for native controls, captions, descriptions, audio descriptions and sign language video. Make sure that all images and video have good descriptions associated with them by utilizing the ‚Äúalt‚Äù attribute, most browsers will display or read this attribute if there is a problem displaying the image.  Make sure that your fonts are resizable/relative thus allowing the viewer to change the font size through the browser.  Also use semantic HTML tags. These tags are much more descriptive than div tags so when screen readers read your semantic HMTL much more information and understanding is relayed. You could also take advantage of HTML5‚Äôs markup for captioning (webVTT), descriptions and subtitles when using video. Finally keep the presentation and functionality layers separate.
+		<p><small>Don’t include Flash for starters or strip it out, screen readers have a problem with Flash video. Use HTML5 video for native controls, captions, descriptions, audio descriptions and sign language video. Make sure that all images and video have good descriptions associated with them by utilizing the “alt” attribute, most browsers will display or read this attribute if there is a problem displaying the image.  Make sure that your fonts are resizable/relative thus allowing the viewer to change the font size through the browser.  Also use semantic HTML tags. These tags are much more descriptive than div tags so when screen readers read your semantic HMTL much more information and understanding is relayed. You could also take advantage of HTML5’s markup for captioning (webVTT), descriptions and subtitles when using video. Finally keep the presentation and functionality layers separate.
 </small></p> 
 				
-		<h4>2. Visit a video service on the web and search for ‚ÄúScreen Reader Demo‚Äù and ‚ÄúMobile Screen Reader‚Äù. What are some of the common frustrations that you see among the examples given? How could you fix and or use them?
+		<h4>2. Visit a video service on the web and search for “Screen Reader Demo” and “Mobile Screen Reader”. What are some of the common frustrations that you see among the examples given? How could you fix and or use them?
 </h4>
-		<p><small> Generally the current price point of screen readers excludes and estimated 85% of the market, they‚Äôre expensive. Blind people can‚Äôt see the cursor and have to memorize keyboard commands. Traditional browsers aren‚Äôt much use to blind people due to the webpage being populated with images and graphics that are of no use to blind people so text browsers should be used to increase efficiency. Some of the other top frustrations of screen reader users are the page layout of the site causing confusion, poorly designed forms, misleading links, inaccessible PDFs or files, and screen reader crashes. Obviously designing a web environment keeping accessibility in mind is a good first step in easing these frustrations. By using semantic HTML websites through descriptive tag names can effectively convey a sites layout reducing confusion. Also using software to cleanup and check your code and assist in reducing frustrations by identifying missing ‚Äúalt‚Äù attributes broken links and other problems with your websites code. 
+		<p><small> Generally the current price point of screen readers excludes and estimated 85% of the market, they’re expensive. Blind people can’t see the cursor and have to memorize keyboard commands. Traditional browsers aren’t much use to blind people due to the webpage being populated with images and graphics that are of no use to blind people so text browsers should be used to increase efficiency. Some of the other top frustrations of screen reader users are the page layout of the site causing confusion, poorly designed forms, misleading links, inaccessible PDFs or files, and screen reader crashes. Obviously designing a web environment keeping accessibility in mind is a good first step in easing these frustrations. By using semantic HTML websites through descriptive tag names can effectively convey a sites layout reducing confusion. Also using software to cleanup and check your code and assist in reducing frustrations by identifying missing “alt” attributes broken links and other problems with your websites code. 
 </small></p>
 		
 		 
@@ -182,8 +182,74 @@ The website that I used for much of this information literally had hundreds of t
 		
 		
 				</article>
-				<article id="week3">
-<h4>week three: discussion, industry research</h4>
+				<article class="hidden" id="week3">
+<h2>week three: discussion, industry research</h2>
+<h4>This report will attempt to answer the following questions.</h4>
+<h4>1. What are the top selling app categories in the US, Japan and Great Britain?<br>
+2. What might you infer about each of these markets?<br>
+3. What is the average cost and bandwidth limits per user in general in each market and how can this impact development?<br>
+4. What would your suggested strategy be in product category and global market choice? </h4>
+<p><small>While its difficult to get any specific “current” data regarding what exactly the “top selling” app categories are per country we can look at what the “top selling” app categories are in the overall mobile market as well as specific country trends and extrapolate from there.  Referencing data that is 1 year old or even six months old might not be the best use of our time considering the pace of change the mobile industry is experiencing.  Plus what the best selling app was yesterday probably will not be the best selling app tomorrow.  The exponential increases in network bandwidth, mobile hardware/software device specifications along with advances in social search and data mining all provide us with a rapidly changing landscape that should force us to think of a app idea that looks past todays successes. The opportunity to develop the next best selling app should not be looked at in a general sense but in a specific and targeted one after all the underlying benefit and utility of mobile is just that. Plus app development has be going on for at least 5 years now so the low hanging fruit has been picked. Who wants to compete on a level where significant money and resources have already been allocated and competitive barriers to entry are significant and expensive. With a mobile landscape so fertile and growth exponential in the foreseeable future let’s focus on out flanking our competition by specializing on opportunity where there is sufficient demand, profitability and less competition, the second and third tier. To do this lets review some current data. 
+
+The following chart gives us a good idea of the top app categories over the past two years <em>(Mobile Mix, 2012).</em></small></p>
+<div class="figure">
+<p><img src="chart.png" alt="Mobile Mix 2012 chart"/></p>
+</div>
+<p><small>Now let’s pick out some general trends in the US, Japan and Great Britain by looking at specific country data in a report commissioned by Google and conducted by Ipsos MediaCT in partnership with the Mobile Marketing Association and the Interactive Advertising Bureau. <em>(Google, 2012).</em></small></p>
+<h4>-Smartphone penetration has risen to 44% of the population in the US, 51% in the UK and 20% in Japan.</h4>
+<h4>-35% of smartphone users in the US, 31% in the UK and 39% in have made a purchase on their phone.</h4>
+<h4>-94% of smartphone users look for local information on their phone in the US, 85% in the UK and 91% in Japan. 90% in the US, 81% in the UK and 79% in Japan take action a result, such as making a purchase or contacting the business.
+</h4>
+<h4>-Smartphones are critical shopping tools with 96% in the US, 95% in the UK and 100% in Japan having researched a product or service on their device. 
+</h4>
+<h4>-94% of smartphone users look for local information on their phone in the US, 85% in the UK and 91% in Japan. 90% in the US, 81% in the UK and 79% in Japan take action a result, such as making a purchase or contacting the business.
+</h4>
+<h4>-58% of smartphone users in the US, 37% in the UK and 52% in Japan have looked for local information at least once a week and 27% in the US, 13% in the UK and 24% in Japan have looked for local information daily.
+</h4>
+<h4>-70% in the US, 54% in the UK and 50% in Japan have connected with the business. While 66% in the US, 59% in the UK and 57% in Japan visited the business. 23% in the US, 12% in the UK and 26% in Japan told others about it. And finally 36% in the US, 32% in the UK and 26% in Japan made a purchase.
+</h4>
+<p><small>Given the data above we can see that all the major trends by category are represented by the usual suspects; Games, Music & Entertainment, Mobile Social Media, Communication, Productivity and Tools, Science & Technology, Sports, News, Books & Reference and Weather. We can also see that at even its lowest level (about 13%) smartphone users local affiliation and focus still gives us a 1 in 10 target rate. The question is how can we stand out? How can we be different?  One way to do this is to try and predict the future and identify what’s not there yet that should be or will be soon. Remember the pure plays back when the internet was first getting started? Remember the globalvillage.com? Basically the idea was that if you specialized in one subject and did it the best you could become the final destination for the global village of connected users for that particular subject; lamps.com, barstools.com gamestop, fabrics, sheet metal etc... this list goes on and on for any category you can think of.  These categories will fill out and mature with the industry. So now lets look back at the top selling categories identified above and pretend that they are the first level of categories that has risen to the top in a relatively young industry. What is the second and third level going to be? Naturally, just like the internet in the beginning, global villages (apps) will be created for the second and third level categories. I suggest we focus our application development efforts on what we believe one of the best second level categories will be coupled with a push toward local. If we look at how several of the search engines categorize their search categories we see the same categories listed above in mobile’s top ten app categories but we also find 10-15 other categories like; finance, home & garden, health, law, food & drink etc... The main search engines have already predicted our second and third level categories giving us a window into mobiles future. This is where I would recommend we initiate our efforts once again coupled with a local push meaning that our central focus either aggregates or mashes local business and resources with our product solution.  Each market will be slightly different but each market whether its the US, UK or Japan will have a second level of categories that will be coming online. This coupled with the significant trends, country agnostic, toward local search and commerce will provide us with our “top selling” app.  With a commitment toward additional funding for research of second level categories we can identified per country the appropriate second level category and work can begin toward specifying the app with appropriate local business and resource integration.
+<br></small></p>
+<p><small>
+Other things to consider. Each country will have specific cultural, economic, infrastructure and social differences that will impact development but generally speaking the main things that could effect development would be bandwidth constraints and their effect on delivering heavy assets like video. Any new app development should be targeted at a 3G network at this point. Avoid any app ideas that require the use of heavy assets initially for the following reasons. Most of the top application categories above haven’t gotten there solely due to heavy assets if they did they own the assets, specialize in aggregating them and/or create them themselves. All reasons not to initiate development of an app requiring heavy assets unless you fall into one of those categories. Right now heavy assets shouldn’t be required for a second level category app and can be planned for with an iterative design strategy. Basically we can use heavy data down the road when called for or required. Not relying on heavy assets or video should allow us to provide a second level category app solution to any market we choose knowing that we can move toward heavier assets in the future. Even the most developed mobile networks risk access an usability issues with their users if they rely on heavy assets which can reflect negatively on their brand and customer experience.  The exceptions being brands that currently have video as their primary asset or need it based on their product offering.  HBO has no choice and we don’t want to compete with Youtube do we. Plus we can keep down initial development costs not supporting video. In other words now is not the time to lead with video for a new multi market app solution.
+<br></small></p>
+<p><small>
+Costs per user are generally out of our control if we follow the current business model trends of apps on the market which generally fall into charging a nominal fee of $1 or so to deriving all their revenue from advertising. Unless the plan is to charge $30 (or something like that for your app) either charging a small amount or deriving revenue from advertising should prevent any major obstacles due to specific geographical economic issues. What type of data plan users are on should also not matter initially if our focus stays away from heavy assets.
+<br></small></p>
+<p><small>
+In conclusion I would recommend focusing on the US market due to its maturity mobile penetration and likelihood that second level categories will become more popular quicker. I would also focus specifically on finance or health leveraging current US sensitivities (finance) and national focused efforts (healthcare).
+<br></small></p>
+<h4>
+The following references were used to create this report:
+</h4>
+<aside class="site">
+<p><small>
+Google. (2012).<i> Our mobile planet smartphone research..</i> Retrieved from <a>http://www.ourmobileplanet.com/en/</a>
+<br></small></p>
+<p><small>
+Mobile Mix. (2012).<i> 2012 year in review mobile mix™ report.</i> Retrieved from <a>http://www.millennialmedia.com/mobile-intelligence/mobile-mix/</a>
+<br></small></p>
+<p><small>
+Matzner, R. (2012, April 11). <i>Designing a mobile app? don't make these 10 mistakes.</i> Retrieved from <a>http://mashable.com/2012/04/11/mobile-app-design-tips/</a><br></small></p>
+<p><small>
+Lane, N. (2010, December 2). <i>The insider’s guide to mobile web marketing in the uk.</i> Retrieved from <a>http://mobithinking.com/guide-mobile-web-uk</a><br></small></p>
+<p><small>
+Marriott, L. (2010, March).<i> The insider’s guide to mobile web marketing in the us by laura marriott.</i> Retrieved from <a>http://mobithinking.com/laura-marriott-guide-mobile-web-us</a>
+<br></small></p>
+<p><small>
+Business Insider. (2013, February 22).<i> Bii report: Why the "second screen" industry is set to explode read more.</i> Retrieved from <a>http://www.businessinsider.com/bii-report-why-the-second-screen-industry-is-set-to-explode-2013-2</a><br></small></p>
+<p><small>
+Fitchard, K. (2013, February 21).<i> Qualcomm’s new radio chip gets us one step closer to a global 4g phone.</i> Retrieved from <a>http://www.businessinsider.com/sai/mobile</a>
+<br></small></p>
+<p><small>
+Ken Davenport, K. (2012, January 10). <i>The best selling iphone apps and what they mean to us.. </i>Retrieved from <a>http://www.theproducersperspective.com/my_weblog/2012/01/the-best-selling-iphone-apps-and-what-they-mean-to-us.html</a>
+<br></small></p>
+<p><small>
+Matzner, R. (2013, January 16).<i> 7 ways mobile apps are driving revenue for businesses.</i> Retrieved from <a>http://mashable.com/2013/01/16/mobile-app-revenue/</a><br></small></p>	
+</aside>
+
+
+
 				</article>
         		</section>
         		<footer>

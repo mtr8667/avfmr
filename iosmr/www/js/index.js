@@ -42,10 +42,10 @@ function onDeviceReady() {
 
 
 
-
+// get geolocation data
 function onSuccess(position) {
 	$("#geo").html("<h2>geolocation information</h2>")
-		.append("<p>" +		
+			.append("<p>" +		
 		                      'Latitude: '  + position.coords.latitude + '<br />' + 
 		                      'Longitude: '  + position.coords.longitude + '<br />' + 
   	                          'Altitude: ' + position.coords.altitude + '<br />' + 
@@ -166,7 +166,7 @@ var getArticles = function(id) {
 	return(false);
 }
 
-/* below each var is associated with each navigational link passing the article ID in to the getArticle function. Jenifer I tried like heck to do this in JQuery and could not get it to work. My reading online in pursuit of a solution lead me to the possible cause of using $("#foo") always recalling the $(window).load every time the factory was called.
+/* below each var is associated with each navigational link passing the article ID in to the getArticle function. Jennifer I tried like heck to do this in JQuery and could not get it to work. My reading online in pursuit of a solution lead me to the possible cause of using $("#foo") always recalling the $(window).load every time the factory was called? Not sure
 */
 var n1 = document.getElementById("dt");
 	n1.onclick = function(){

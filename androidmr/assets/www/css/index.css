@@ -1,4 +1,6 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* Matthew Ricther AVF 1302 February, 2013
+
+http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -104,8 +106,18 @@ a.current:hover {
     cursor: default;
     text-decoration: none;
 }
+
+i {
+	font-style: inherit;
+}
 ol, ul {
 	list-style: none;
+}
+.figure {
+	float: right;
+	margin-bottom: 0.5em;
+	margin-left: 2.5312424%;
+	width: 49.3626748%;
 }
 blockquote, q {
 	quotes: none;
@@ -167,10 +179,13 @@ footer {
 .nav li:last-child {
     padding-right: 0;
 }
+
 .nav2 li a {
     font-size: .8em;
     padding: 0 7.8125% 6.25% 9.375%;
 }
+
+
 
 .overview {
 	padding: 7.8125% 7.8125% 3.125% 7.8125%;
@@ -201,7 +216,10 @@ footer {
     background-color: #f4f4f4;
     margin-left: 35.666667%;
     padding: 1.587302% 1.587302% 1.587302% 1.587302%;
-    height: 2000px;
+    height: 3000px;
+}
+img, video {
+	max-width: 100%;
 }
 @media screen and (max-width: 768px) {
 	#site {

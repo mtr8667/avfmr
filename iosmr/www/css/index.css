@@ -179,11 +179,7 @@ footer {
 .nav li:last-child {
     padding-right: 0;
 }
-.nav2 {
-    
-    border-bottom:1px px solid #424242; 
 
-}
 .nav2 li a {
     font-size: .8em;
     padding: 0 7.8125% 6.25% 9.375%;
